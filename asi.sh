@@ -20,6 +20,9 @@ echo '127.0.1.1 vArch.localdomain vArch' >> /etc/hosts
 pacman -S networkmanager
 systemctl enable NetworkManager
 
+echo 'user: root'
 passwd
 
 useradd -m -g users -G wheel -s /bin/bash vAE
+echo 'user: vAE'
+passwd vAE
