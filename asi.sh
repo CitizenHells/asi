@@ -1,6 +1,6 @@
 #! /bin/bash
 
-reflector --verbose --country 'Russian Federation' -l 10 -p https --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --country 'RU' -l 10 -p https --sort rate --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base linux linux-firmware amd-ucode sudo vim btrfs-progs
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
@@ -21,4 +21,5 @@ pacman -S networkmanager
 systemctl enable NetworkManager
 
 passwd
-echo 'root'
+
+useradd -m -g users -G wheel -s /bin/bash vAE
